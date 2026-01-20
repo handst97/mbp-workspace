@@ -1,0 +1,33 @@
+{
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/venv": true,
+        "**/.venv": true,
+        "**/site-packages": true,
+        "ai-poc": true,
+        "claudia": true,
+        "context7": true,
+        "openmemory": true,
+        "github-mcp-server": true,
+        "phoenix": true,
+        "playwright-mcp": true,
+        "flowise-docker": true,
+        "mcp-knowledge-graph": true,
+        "mcp-obsidian": true,
+        "memory-bank-mcp": true,
+        "archive": true
+    },
+    "git.autorefresh": false,
+    "git.ignoreLimitWarning": true,
+    "files.watcherExclude": {
+        "**/.git/**": true,
+        "**/node_modules/**": true,
+        "**/venv/**": true,
+        "**/.venv/**": true,
+        "ai-poc/**": true,
+        "claudia/**": true,
+        "context7/**": true,
+        "openmemory/**": true,
+        "github-mcp-server/**": true
+    }
+}

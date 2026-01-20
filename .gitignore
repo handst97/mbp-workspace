@@ -54,6 +54,7 @@ logs/
 /mcp-obsidian/
 /memory-bank-mcp/
 /openmemory/
+**/.git
 
 # Other active modules
 /troubleshooting/
