@@ -1,0 +1,59 @@
+# AI Agent session data
+.aider*
+.opencode/
+.claude/
+
+# Environment & Secrets
+.env
+*.pem
+*.key
+*.backup.*
+config.json
+
+# Node.js (Aggressive)
+node_modules/
+dist/
+build/
+.npm
+.yarn
+
+# Python (Aggressive)
+*-env/
+*_env/
+venv/
+site-packages/
+bin/
+lib/
+include/
+share/
+__pycache__/
+*.py[cod]
+
+# Media & Artifacts (THE BLOAT)
+playwright-mcp/demo-videos/
+playwright-mcp/demo-screenshots/
+playwright-mcp/screenshots/
+playwright-mcp/reports/
+flowise-docker/flowise_data/logs/
+flowise-docker/flowise_data_backup_*/
+results/
+logs/
+*.png
+*.jpg
+*.webm
+*.har
+
+# macOS
+.DS_Store
+
+# Nested Git Repositories (Prevent embedded git issues)
+ai-poc/
+claudia/
+context7/
+mcp-knowledge-graph/
+mcp-obsidian/
+memory-bank-mcp/
+openmemory/
+
+# Historical Archive
+archive/
