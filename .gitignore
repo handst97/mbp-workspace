@@ -47,13 +47,28 @@ logs/
 .DS_Store
 
 # Nested Git Repositories (Prevent embedded git issues)
-ai-poc/
-claudia/
-context7/
-mcp-knowledge-graph/
-mcp-obsidian/
-memory-bank-mcp/
-openmemory/
+/ai-poc/
+/claudia/
+/context7/
+/mcp-knowledge-graph/
+/mcp-obsidian/
+/memory-bank-mcp/
+/openmemory/
+
+# Other active modules
+/troubleshooting/
+/github-mcp-server/
+/phoenix/
+/phoenix-ollama/
+/playwright-mcp/
+/playwright-mcp-docker/
+/flowise-docker/
+/markitdown-mcp/
+/tinyllama-mcp-intent-model/
+/mcp-test/
+/generated-diagrams/
+/aws-diagrams/
+/Openwebui/
 
 # Historical Archive
 archive/
