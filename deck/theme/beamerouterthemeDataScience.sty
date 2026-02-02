@@ -1,0 +1,60 @@
+% beamerouterthemeDataScience.sty
+% Custom outer theme for Data Science course
+% Minimal, elegant frame decoration
+
+\mode<presentation>
+
+\RequirePackage{tikz}
+
+% Frame title - left-aligned with subtle accent
+\defbeamertemplate*{frametitle}{DataScience}[1][]
+{
+  \vskip0.5em
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=1.5em,rightskip=1.5em]{frametitle}
+    {\usebeamerfont{frametitle}\insertframetitle\par}%
+    \ifx\insertframesubtitle\@empty%
+    \else%
+      \vskip-0.2em
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\par}%
+    \fi%
+  \end{beamercolorbox}
+  \vskip-0.3em
+  \hspace{1.5em}{\color{DSCoral}\rule{3em}{2pt}}{\color{DSTeal}\rule{1.5em}{2pt}}
+  \vskip0.5em
+}
+
+% Footline - minimal with page number
+\defbeamertemplate*{footline}{DataScience}
+{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.5ex,dp=1ex,left,leftskip=1.5em]{footline}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.5ex,dp=1ex,center]{footline}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.5ex,dp=1ex,right,rightskip=1.5em]{footline}%
+      \usebeamerfont{page number in head/foot}\insertframenumber{} / \inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% Headline - empty for clean look
+\defbeamertemplate*{headline}{DataScience}
+{
+  \leavevmode%
+  \vskip2pt
+  \hfill
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[DSNavy,opacity=0.03] (0,0) circle (15pt);
+  \end{tikzpicture}
+  \vskip2pt
+}
+
+% Sidebar - none
+\setbeamertemplate{sidebar right}{}
+\setbeamertemplate{sidebar left}{}
+
+\mode<all>

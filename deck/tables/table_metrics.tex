@@ -1,0 +1,11 @@
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Metric} & \textbf{Formula} & \textbf{Best For} \\
+\midrule
+Accuracy & $\frac{TP+TN}{\text{Total}}$ & Balanced data \\
+Precision & $\frac{TP}{TP+FP}$ & Cost of FP high \\
+Recall & $\frac{TP}{TP+FN}$ & Cost of FN high \\
+F1-Score & $\frac{2 \cdot P \cdot R}{P+R}$ & Imbalanced data \\
+AUC-ROC & Area under curve & Threshold tuning \\
+\bottomrule
+\end{tabular}

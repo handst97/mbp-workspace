@@ -1,0 +1,74 @@
+% beamercolorthemeDataScience.sty
+% Custom color theme for Data Science course
+% Original design - Deep navy and coral accent palette
+
+\mode<presentation>
+
+% Define custom colors - sophisticated academic palette
+\definecolor{DSNavy}{RGB}{23, 37, 84}          % Deep navy - primary
+\definecolor{DSSlate}{RGB}{51, 65, 85}         % Slate - secondary
+\definecolor{DSCoral}{RGB}{239, 118, 122}      % Coral - accent
+\definecolor{DSTeal}{RGB}{45, 212, 191}        % Teal - highlight
+\definecolor{DSCream}{RGB}{254, 252, 247}      % Cream - background
+\definecolor{DSGold}{RGB}{234, 179, 8}         % Gold - emphasis
+\definecolor{DSLightGray}{RGB}{241, 245, 249}  % Light gray - subtle bg
+\definecolor{DSMidGray}{RGB}{148, 163, 184}    % Mid gray - muted text
+
+% Structure colors
+\setbeamercolor{structure}{fg=DSNavy}
+\setbeamercolor{palette primary}{bg=DSNavy,fg=white}
+\setbeamercolor{palette secondary}{bg=DSSlate,fg=white}
+\setbeamercolor{palette tertiary}{bg=DSCoral,fg=white}
+\setbeamercolor{palette quaternary}{bg=DSTeal,fg=DSNavy}
+
+% Background
+\setbeamercolor{background canvas}{bg=DSCream}
+\setbeamercolor{background}{bg=DSCream}
+
+% Title page
+\setbeamercolor{title}{fg=DSNavy}
+\setbeamercolor{subtitle}{fg=DSSlate}
+\setbeamercolor{author}{fg=DSSlate}
+\setbeamercolor{institute}{fg=DSMidGray}
+\setbeamercolor{date}{fg=DSMidGray}
+
+% Frame elements
+\setbeamercolor{frametitle}{fg=DSNavy,bg=DSCream}
+\setbeamercolor{framesubtitle}{fg=DSSlate}
+
+% Text colors
+\setbeamercolor{normal text}{fg=DSSlate,bg=DSCream}
+\setbeamercolor{alerted text}{fg=DSCoral}
+\setbeamercolor{example text}{fg=DSTeal}
+
+% Block colors
+\setbeamercolor{block title}{bg=DSNavy,fg=white}
+\setbeamercolor{block body}{bg=DSLightGray,fg=DSSlate}
+\setbeamercolor{block title alerted}{bg=DSCoral,fg=white}
+\setbeamercolor{block body alerted}{bg=DSLightGray,fg=DSSlate}
+\setbeamercolor{block title example}{bg=DSTeal,fg=DSNavy}
+\setbeamercolor{block body example}{bg=DSLightGray,fg=DSSlate}
+
+% Item colors
+\setbeamercolor{item}{fg=DSCoral}
+\setbeamercolor{subitem}{fg=DSTeal}
+\setbeamercolor{subsubitem}{fg=DSSlate}
+\setbeamercolor{item projected}{bg=DSNavy,fg=white}
+
+% Navigation and footer
+\setbeamercolor{section in toc}{fg=DSNavy}
+\setbeamercolor{subsection in toc}{fg=DSSlate}
+\setbeamercolor{footline}{fg=DSMidGray,bg=DSCream}
+\setbeamercolor{page number in head/foot}{fg=DSMidGray}
+
+% Caption
+\setbeamercolor{caption}{fg=DSMidGray}
+\setbeamercolor{caption name}{fg=DSSlate}
+
+% Bibliography
+\setbeamercolor{bibliography entry author}{fg=DSSlate}
+\setbeamercolor{bibliography entry title}{fg=DSNavy}
+\setbeamercolor{bibliography entry location}{fg=DSMidGray}
+\setbeamercolor{bibliography entry note}{fg=DSMidGray}
+
+\mode<all>

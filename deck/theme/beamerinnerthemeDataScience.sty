@@ -1,0 +1,83 @@
+% beamerinnerthemeDataScience.sty
+% Custom inner theme for Data Science course
+% Clean, modern design with subtle geometric accents
+
+\mode<presentation>
+
+% Use rounded blocks with subtle shadows
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% Title page - elegant centered layout
+\defbeamertemplate*{title page}{DataScience}[1][]
+{
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+    % Decorative top line
+    {\color{DSCoral}\rule{0.4\textwidth}{2pt}}
+    \vskip1em
+    % Title
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
+    \ifx\insertsubtitle\@empty%
+    \else%
+      \vskip0.5em%
+      {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+    \fi%
+    \vskip1em
+    % Decorative bottom line
+    {\color{DSTeal}\rule{0.25\textwidth}{1pt}}
+    \vskip2em
+    % Author
+    {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
+    \vskip0.5em
+    % Institute
+    {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+    \vskip1em
+    % Date
+    {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+  \endgroup
+  \vfill
+}
+
+% Itemize items - custom bullets
+\setbeamertemplate{itemize item}{\scriptsize\raise1.5pt\hbox{\textcolor{DSCoral}{$\blacktriangleright$}}}
+\setbeamertemplate{itemize subitem}{\scriptsize\raise1pt\hbox{\textcolor{DSTeal}{$\circ$}}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1pt\hbox{\textcolor{DSSlate}{$\blacksquare$}}}
+
+% Enumerate items
+\setbeamertemplate{enumerate item}{\textcolor{DSNavy}{\insertenumlabel.}}
+\setbeamertemplate{enumerate subitem}{\textcolor{DSSlate}{\insertenumlabel.\insertsubenumlabel}}
+\setbeamertemplate{enumerate subsubitem}{\textcolor{DSMidGray}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}}
+
+% Description item
+\setbeamertemplate{description item}{\textcolor{DSNavy}{\insertdescriptionitem}}
+
+% Section page
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill
+    \centering
+    {\color{DSMidGray}\rule{0.3\textwidth}{0.5pt}}
+    \vskip1em
+    {\usebeamerfont{section title}\usebeamercolor[fg]{section title}\insertsectionhead\par}
+    \vskip1em
+    {\color{DSCoral}\rule{0.2\textwidth}{2pt}}
+    \vfill
+  \end{frame}
+}
+
+% Table of contents - clean styling
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[square]
+
+% Caption styling
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+% Bibliography
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+% Navigation symbols - disabled for clean look
+\setbeamertemplate{navigation symbols}{}
+
+\mode<all>

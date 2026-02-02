@@ -1,0 +1,566 @@
+% ============================================================================
+% Introduction to Data Science
+% An Undergraduate Course Deck
+% Custom Beamer Theme: DataScience
+% ============================================================================
+
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% Load custom theme
+\makeatletter
+\def\input@path{{./theme/}}
+\makeatother
+\usepackage{./theme/beamerthemeDataScience}
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc}
+\usepackage{xcolor}
+
+% Graphics path
+\graphicspath{{./figures/}}
+
+% Prevent overfull boxes
+\tolerance=1000
+\emergencystretch=3em
+\hfuzz=2pt
+\vfuzz=2pt
+
+% Metadata
+\title{Introduction to Data Science}
+\subtitle{Transforming Data into Insight}
+\author{Instructor Name}
+\institute{Department of Computer Science \\ University Name}
+\date{Spring 2026}
+
+% ============================================================================
+\begin{document}
+
+% Title slide
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% Learning Objectives slide
+\begin{frame}{Learning Objectives}
+  By the end of this lecture, you will be able to:
+  \begin{enumerate}
+    \item Define data science and explain its core components
+    \item Describe the data science workflow and time allocation
+    \item Distinguish between descriptive, diagnostic, predictive, and
+          prescriptive analytics
+    \item Identify key tools and programming languages used in the field
+    \item Explain fundamental machine learning paradigms
+  \end{enumerate}
+
+  \vspace{1em}
+  \textit{Prerequisites: Basic familiarity with programming concepts}
+\end{frame}
+
+% ============================================================================
+\section{What is Data Science?}
+% ============================================================================
+
+\begin{frame}{The Data Science Revolution}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \textbf{Data science} is an interdisciplinary field that uses:
+      \begin{itemize}
+        \item Scientific methods
+        \item Algorithms and systems
+        \item Domain expertise
+      \end{itemize}
+      \vspace{0.5em}
+      To extract \alert{knowledge} and \alert{insights} from structured
+      and unstructured data.
+
+      \vspace{1em}
+      \textbf{Key insight:}
+      Data science bridges the gap between raw data and
+      actionable business decisions.
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{fig_ds_domains.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{The Data Explosion}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{fig_data_growth.png}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \textbf{Data is growing exponentially:}
+      \begin{itemize}
+        \item IoT devices generating continuous streams
+        \item Social media: hundreds of millions of posts daily
+        \item Digital transactions, sensors, and logs
+      \end{itemize}
+
+      \vspace{0.5em}
+      \begin{alertblock}{The Challenge}
+        More data doesn't automatically mean more insight---we need
+        systematic methods to extract value.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{The Business Imperative}
+  \textbf{Why organizations invest in data science:}
+
+  \vspace{0.5em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Competitive Advantage}
+      \begin{itemize}
+        \item Better customer understanding
+        \item Faster decision-making
+        \item Predictive capabilities
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Operational Efficiency}
+      \begin{itemize}
+        \item Automation of routine decisions
+        \item Personalization at scale
+        \item Risk reduction
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{1em}
+  \begin{exampleblock}{Industry Trend}
+    Companies across all sectors---from healthcare to finance to retail---are
+    building data science capabilities as a strategic priority.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Types of Data}
+  \centering
+  \vspace{0.5em}
+  \input{tables/table_data_types.tex}
+
+  \vspace{1em}
+  \begin{alertblock}{Important}
+    The majority of organizational data is \textbf{unstructured}---text,
+    images, audio, and video---requiring specialized techniques.
+  \end{alertblock}
+\end{frame}
+
+% ============================================================================
+\section{The Data Science Workflow}
+% ============================================================================
+
+\begin{frame}{The Data Science Pipeline}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{fig_pipeline.png}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \textbf{Key observations:}
+
+      \vspace{0.5em}
+      \begin{itemize}
+        \item \alert{Up to 40\% on cleaning}---real data is messy
+        \item Modeling is only 15\% of the work
+        \item Reporting often undervalued
+      \end{itemize}
+
+      \vspace{0.5em}
+      \begin{exampleblock}{Best Practice}
+        Invest time in understanding your data before modeling.
+        ``Garbage in, garbage out.''
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{From Description to Prescription}
+  \centering
+  \includegraphics[width=0.68\textwidth,height=0.65\textheight,keepaspectratio]{fig_analytics_types.png}
+
+  \vspace{0.3em}
+  \small
+  Each level builds on the previous, adding value and complexity.
+\end{frame}
+
+\begin{frame}{Descriptive and Diagnostic Analytics}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Descriptive Analytics}\\
+      \textit{What happened?}
+      \begin{itemize}
+        \item Dashboards and reports
+        \item Historical summaries
+        \item KPI tracking
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textit{Example: Monthly sales report showing revenue by region}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Diagnostic Analytics}\\
+      \textit{Why did it happen?}
+      \begin{itemize}
+        \item Root cause analysis
+        \item Correlation studies
+        \item Drill-down analysis
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textit{Example: Why did sales drop 15\% in Q3?}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Predictive and Prescriptive Analytics}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Predictive Analytics}\\
+      \textit{What will happen?}
+      \begin{itemize}
+        \item Forecasting models
+        \item Risk assessment
+        \item Trend analysis
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textit{Example: Customer churn prediction model}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Prescriptive Analytics}\\
+      \textit{What should we do?}
+      \begin{itemize}
+        \item Optimization algorithms
+        \item Decision support systems
+        \item Automated recommendations
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textit{Example: Dynamic pricing engine}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ============================================================================
+\section{Tools and Skills}
+% ============================================================================
+
+\begin{frame}{Programming Languages for Data Science}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \resizebox{0.95\columnwidth}{!}{\input{tables/table_languages.tex}}
+
+      \vspace{0.8em}
+      \textbf{Key Libraries:}
+      \begin{itemize}
+        \item \textbf{Python:} NumPy, pandas, scikit-learn
+        \item \textbf{R:} tidyverse, ggplot2, caret
+        \item \textbf{Deep Learning:} TensorFlow, PyTorch
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Why Python dominates:}
+      \begin{itemize}
+        \item General-purpose language
+        \item Extensive ML ecosystem
+        \item Strong community support
+        \item Integration with production systems
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textbf{Why R remains important:}
+      \begin{itemize}
+        \item Statistical rigor
+        \item Publication-quality visualizations
+        \item Academic and research use
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Development Environment and Infrastructure}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Development Tools:}
+      \begin{itemize}
+        \item Jupyter Notebooks---interactive analysis
+        \item VS Code, RStudio---IDEs
+        \item Git---version control
+        \item Docker---reproducibility
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Data Infrastructure:}
+      \begin{itemize}
+        \item SQL databases---structured data
+        \item Cloud platforms (AWS, GCP, Azure)
+        \item Spark---big data processing
+        \item Data warehouses (Snowflake, BigQuery)
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.5em}
+  \begin{block}{Modern Data Stack}
+    Today's data scientists work with cloud-native tools that enable
+    collaboration, scalability, and reproducibility.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Essential Skills}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{fig_skills.png}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Technical Skills:}
+      \begin{itemize}
+        \item Programming (Python, R)
+        \item Statistics and probability
+        \item Machine learning
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textbf{Professional Skills:}
+      \begin{itemize}
+        \item Communication and storytelling
+        \item Domain expertise
+        \item Critical thinking
+      \end{itemize}
+
+      \vspace{0.3em}
+      \small\textit{Technical skills get you hired; communication skills get you promoted.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ============================================================================
+\section{Machine Learning Fundamentals}
+% ============================================================================
+
+\begin{frame}{Machine Learning Paradigms}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{fig_ml_categories.png}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Supervised Learning}
+      \begin{itemize}
+        \item Labeled training data
+        \item Classification, Regression
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textbf{Unsupervised Learning}
+      \begin{itemize}
+        \item No labels provided
+        \item Clustering, Dimensionality reduction
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textbf{Reinforcement Learning}
+      \begin{itemize}
+        \item Learning from feedback
+        \item Games, Robotics, Control
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Example: Predicting Student Performance}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{fig_sample_analysis.png}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \textbf{Research question:}\\
+      Does study time predict exam performance?
+
+      \vspace{0.5em}
+      \textbf{Method:}
+      \begin{itemize}
+        \item Simple linear regression
+        \item 80 student observations
+        \item Weekly hours vs.\ exam score
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textbf{Finding:}\\
+      Strong positive correlation ($R^2 \approx 0.6$); each additional hour
+      $\approx$ 5 points.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Algorithm Selection Guide}
+  \centering
+  \vspace{0.3em}
+  \input{tables/table_ml_algorithms.tex}
+
+  \vspace{0.8em}
+  \begin{block}{Selection Criteria}
+    Choose based on: task type, data size, interpretability requirements,
+    and computational resources.
+  \end{block}
+\end{frame}
+
+\begin{frame}{The Bias-Variance Tradeoff}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{fig_bias_variance.png}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \textbf{Bias} (underfitting):
+      \begin{itemize}
+        \item Model too simple
+        \item Misses important patterns
+      \end{itemize}
+
+      \vspace{0.3em}
+      \textbf{Variance} (overfitting):
+      \begin{itemize}
+        \item Model too complex
+        \item Fits noise in training data
+      \end{itemize}
+
+      \vspace{0.3em}
+      \begin{alertblock}{Goal}
+        Find the \textbf{optimal complexity} that minimizes total error.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Evaluation Metrics}
+  \centering
+  \vspace{0.3em}
+  \input{tables/table_metrics.tex}
+
+  \vspace{0.8em}
+  \small
+  Select metrics aligned with your \textbf{business objective}
+  and \textbf{class distribution}.
+\end{frame}
+
+% ============================================================================
+\section{Real-World Applications}
+% ============================================================================
+
+\begin{frame}{Data Science Across Industries}
+  \centering
+  \vspace{0.3em}
+  \input{tables/table_domains.tex}
+
+  \vspace{0.8em}
+  \begin{exampleblock}{Universal Challenge}
+    Every domain requires balancing \textbf{analytical power} with
+    \textbf{ethical considerations} and \textbf{regulatory compliance}.
+  \end{exampleblock}
+\end{frame}
+
+% ============================================================================
+\section{Course Overview}
+% ============================================================================
+
+\begin{frame}{Course Roadmap}
+  \centering
+  \vspace{0.3em}
+  \input{tables/table_roadmap.tex}
+
+  \vspace{0.8em}
+  \begin{block}{Learning Philosophy}
+    Learn by \textbf{doing}. Each module includes hands-on labs,
+    real datasets, and project-based assessments.
+  \end{block}
+\end{frame}
+
+\begin{frame}{What You'll Build}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Portfolio Projects:}
+      \begin{enumerate}
+        \item Exploratory data analysis report
+        \item Predictive model with evaluation
+        \item Interactive dashboard
+        \item Capstone: End-to-end pipeline
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Assessment:}
+      \begin{itemize}
+        \item Weekly labs: 30\%
+        \item Midterm project: 20\%
+        \item Final capstone: 35\%
+        \item Participation: 15\%
+      \end{itemize}
+
+      \vspace{0.5em}
+      \begin{alertblock}{Key Dates}
+        Midterm: Week 8\\
+        Capstone due: Week 15
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% ============================================================================
+\section{Summary}
+% ============================================================================
+
+\begin{frame}{Key Takeaways}
+  \begin{enumerate}
+    \item Data science combines statistics, computing, and domain expertise
+    \item The workflow: collect $\to$ clean $\to$ analyze $\to$
+          model $\to$ report
+    \item Analytics maturity: descriptive $\to$ diagnostic $\to$
+          predictive $\to$ prescriptive
+    \item Machine learning: supervised, unsupervised, reinforcement
+    \item Balance bias and variance for optimal models
+  \end{enumerate}
+
+  \vspace{1em}
+  \centering
+  \begin{tikzpicture}
+    \node[fill=DSCoral,text=white,rounded corners=3pt,inner sep=8pt,font=\bfseries] {
+      The goal is not just to analyze data, but to drive decisions.
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Questions?}
+  \centering
+  \vfill
+  {\Large\bfseries Thank you!}
+
+  \vspace{1em}
+  Office Hours: TBD\\
+  Email: instructor@university.edu
+
+  \vspace{1em}
+  {\color{DSMidGray}\rule{0.3\textwidth}{0.5pt}}
+
+  \vspace{0.5em}
+  \small
+  Slides available on course website
+  \vfill
+\end{frame}
+
+\end{document}
